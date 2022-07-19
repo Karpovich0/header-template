@@ -1,0 +1,99 @@
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 25px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    z-index: 2000;
+    &__container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 70px;
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 25px;
+    }
+    &__logo {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+    }
+    &__menu {}
+}
+
+.menu {
+    &__icon {}
+    &__body {}
+    &__list {
+        @media(min-width: 769px) {
+            display: flex;
+        }
+        &>li {
+            position: relative;
+            margin-right: 20px;
+            font-size: 18px;
+            color: white;
+            @media(min-width: 769px) {
+                padding: 10px 0;
+            }
+        }
+        li:hover {
+            text-decoration: underline;
+        }
+    }
+    &__link {}
+    &__sub-list {
+        padding: 15px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0 0 5px black;
+        li {
+            margin-bottom: 10px;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__sub-link {
+        color: black;
+    }
+}
+
+.page {
+    &__section {
+        padding: 25px 0;
+    }
+    &__section--one {
+        background-color: aqua;
+    }
+    &__title {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    &__text {}
+    &__section--two {
+        background-color: rgb(46, 237, 141);
+    }
+    &__section--three {
+        background-color: rgb(152, 95, 238);
+    }
+    &__sub-title {
+        margin-bottom: 18px;
+        text-align: center;
+    }
+    p {
+        margin-bottom: 15px;
+    }
+}
