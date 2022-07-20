@@ -1,3 +1,27 @@
+.body{}
+.body--pc .menu__list>li:hover .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: all;
+}
+.body--touch .menu__arrow{    
+        margin-left: 5px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 10px solid #fff; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        transition: transform 0.3s ease;
+}
+.body--touch .menu__link{
+    flex: 1 1 auto;
+}
+.body--touch .menu__list>li{
+    display: flex;
+    align-items: center;
+}
 .wrapper {
     margin: 0 auto;
     width: 100%;
@@ -23,9 +47,12 @@
         padding: 0 25px;
     }
     &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 40px;
         height: 40px;
-        background-color: white;
+        background-color: white;               
     }
     &__menu {}
 }
@@ -46,11 +73,15 @@
                 padding: 10px 0;
             }
         }
-        li:hover {
+        a:hover {
             text-decoration: underline;
         }
     }
     &__link {}
+    &__arrow{
+        display: none;     
+        transition: transform 0.3s ease;   
+    }
     &__sub-list {
         padding: 15px;
         position: absolute;
@@ -59,6 +90,13 @@
         background-color: white;
         min-width: 200px;
         box-shadow: 0 0 5px black;
+        @media(min-width: 769px) {
+            transform: translateY(10%);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
         li {
             margin-bottom: 10px;
         }
@@ -69,6 +107,17 @@
     &__sub-link {
         color: black;
     }
+}
+.body--touch .menu__item-opened .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.body--touch .menu__item-opened .menu__arrow{
+    transform: rotate(90deg);
+    transform-origin: center;
 }
 
 .page {
